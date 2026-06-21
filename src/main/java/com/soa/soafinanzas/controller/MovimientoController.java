@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/movimientos")
+@RequestMapping("/api/v1/movimientos")
 @RequiredArgsConstructor
 @Tag(name = "Movimientos", description = "API para gestión de movimientos financieros")
 public class MovimientoController {

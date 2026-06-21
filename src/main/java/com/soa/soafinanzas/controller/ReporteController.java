@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/reportes")
+@RequestMapping("api/v1/reportes")
 @RequiredArgsConstructor
 @Tag(name = "Reportes", description = "API para consulta de reportes diarios")
 public class ReporteController {

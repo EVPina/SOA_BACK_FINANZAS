@@ -17,7 +17,7 @@ import com.soa.soafinanzas.service.CajaService;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/cajas")
+@RequestMapping("api/v1/cajas")
 @RequiredArgsConstructor
 @Tag(name = "Cajas", description = "API para gestión de cajas")
 public class CajaController {
