@@ -2,16 +2,17 @@ package com.soa.soafinanzas.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 import org.mapstruct.factory.Mappers;
 
 import com.soa.soafinanzas.domain.model.Caja;
 import com.soa.soafinanzas.dto.request.AperturaCajaRequest;
 import com.soa.soafinanzas.dto.response.CajaResponse;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE) // Ignora campos no mapeados para evitar errores)
 public interface CajaMapper {
+    // CajaMapper INSTANCE = Mappers.getMapper(CajaMapper.class);
     
-    CajaMapper INSTANCE = Mappers.getMapper(CajaMapper.class);
     
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "fecha", ignore = true)
@@ -26,4 +27,5 @@ public interface CajaMapper {
     Caja toEntity(AperturaCajaRequest request);
     
     CajaResponse toResponse(Caja caja);
+    
 }

@@ -11,15 +11,19 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class AperturaCajaRequest {
     
+    @Schema(description = "ID del usuario que realiza la apertura de caja", example = "123e4567-e89b-12d3-a456-426614174000")
     @NotNull(message = "El ID del usuario es requerido")
     private UUID usuarioId;
     
+    @Schema(description = "Monto inicial de la caja", example = "1000.00")
     @NotNull(message = "El monto inicial es requerido")
     @DecimalMin(value = "0.00", message = "El monto inicial no puede ser negativo")
     private BigDecimal montoInicial;
